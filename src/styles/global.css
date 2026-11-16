@@ -537,6 +537,10 @@ button:focus-visible {
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+img.card__shot {
+  padding: 0;
+}
+
 .card:hover .card__shot {
   transform: scale(1.03);
 }
@@ -1192,8 +1196,50 @@ button:focus-visible {
 }
 
 .link-card__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 17px;
   font-weight: 600;
+}
+
+.link-card__label svg {
+  color: var(--accent);
+}
+
+/* Screenshot strip: swipe on phones, scroll with trackpad or keyboard on desktop */
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 12px;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #c9d1f5 transparent;
+}
+
+.gallery:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.gallery__item {
+  flex: 0 0 clamp(150px, 38vw, 200px);
+  scroll-snap-align: start;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--accent-wash);
 }
 
 .link-card__url {

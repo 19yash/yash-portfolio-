@@ -22,7 +22,7 @@ npm run lint
 Copy lives in two files, and components in `src/components/` and `src/pages/` only render it:
 
 - [`src/data/content.ts`](src/data/content.ts): profile, intro, skills and experience.
-- [`src/data/projects.ts`](src/data/projects.ts): the project cards and each project's detail page at `/projects/<slug>` (overview, the problem it solves, tech stack, your role, links). Optional fields: `modules`, `howItWorks`, `decisions`, `linksNote`.
+- [`src/data/projects.ts`](src/data/projects.ts): the project cards and each project's detail page at `/projects/<slug>` (overview, the problem it solves, tech stack, your role, links). Optional fields: `modules`, `howItWorks`, `decisions`, `gallery` (screenshots for a swipeable strip), `linksNote`. Link labels can be Live demo, GitHub, App Store or Google Play.
 
 | To add | Put the file in `public/` and set |
 |---|---|

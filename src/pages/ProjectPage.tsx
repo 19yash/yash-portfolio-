@@ -3,7 +3,21 @@ import { Link, useParams } from 'react-router';
 import { BrandIcon, GitHubIcon } from '../components/Icons';
 import { ProjectMedia } from '../components/ProjectMedia';
 import { profile } from '../data/content';
-import { findProject, projects, stackIcons } from '../data/projects';
+import { findProject, projects, stackIcons, type ProjectLink } from '../data/projects';
+
+const linkText: Record<ProjectLink['label'], string> = {
+  'Live demo': 'Open live demo',
+  GitHub: 'View code',
+  'App Store': 'App Store',
+  'Google Play': 'Google Play',
+};
+
+function LinkIcon({ label }: { label: ProjectLink['label'] }) {
+  if (label === 'GitHub') return <GitHubIcon />;
+  if (label === 'App Store') return <BrandIcon name="appstore" size={18} />;
+  if (label === 'Google Play') return <BrandIcon name="googleplay" size={18} />;
+  return null;
+}
 
 export function ProjectPage() {
   const { slug } = useParams();
@@ -40,16 +54,16 @@ export function ProjectPage() {
         <p className="pd__summary rise rise--3">{project.summary}</p>
         {project.links && (
           <div className="pd__actions rise rise--4">
-            {project.links.map((l) => (
+            {project.links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
                 target="_blank"
                 rel="noreferrer"
-                className={`btn ${l.label === 'Live demo' ? 'btn--solid' : 'btn--ghost'}`}
+                className={`btn ${i === 0 ? 'btn--solid' : 'btn--ghost'}`}
               >
-                {l.label === 'GitHub' && <GitHubIcon />}
-                {l.label === 'GitHub' ? 'View code' : 'Open live demo'}
+                <LinkIcon label={l.label} />
+                {linkText[l.label]}
               </a>
             ))}
           </div>
@@ -73,6 +87,19 @@ export function ProjectPage() {
                 {para}
               </p>
             ))}
+
+            {project.gallery && (
+              <div className="pd__block">
+                <h3 className="pd__subhead">Screens</h3>
+                <ul className="gallery" role="list" aria-label="App screenshots" tabIndex={0}>
+                  {project.gallery.map((g) => (
+                    <li key={g.src} className="gallery__item">
+                      <img src={g.src} alt={g.alt} width={540} height={960} loading="lazy" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {project.modules && (
               <div className="pd__block">
@@ -179,11 +206,14 @@ export function ProjectPage() {
             Links
           </h2>
           <div className="pd__content">
-            {project.links ? (
+            {project.links && (
               <div className="link-cards">
                 {project.links.map((l) => (
                   <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="link-card lift">
-                    <span className="link-card__label">{l.label}</span>
+                    <span className="link-card__label">
+                      <LinkIcon label={l.label} />
+                      {l.label}
+                    </span>
                     <span className="link-card__url">{l.href.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
                     <span className="link-card__arrow" aria-hidden="true">
                       ↗
@@ -191,9 +221,8 @@ export function ProjectPage() {
                   </a>
                 ))}
               </div>
-            ) : (
-              <p className="pd__note">{project.linksNote}</p>
             )}
+            {project.linksNote && <p className="pd__note">{project.linksNote}</p>}
           </div>
         </section>
       </div>

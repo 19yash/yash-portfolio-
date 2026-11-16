@@ -1,7 +1,7 @@
 import type { IconName } from './icons';
 
 export interface ProjectLink {
-  label: 'Live demo' | 'GitHub';
+  label: 'Live demo' | 'GitHub' | 'App Store' | 'Google Play';
   href: string;
 }
 
@@ -20,6 +20,8 @@ export interface Project {
   /** Shown in the media area instead of the placeholder when there is no image. */
   flow?: string[];
   links?: ProjectLink[];
+  /** Screenshots shown as a swipeable strip on the detail page. */
+  gallery?: { src: string; alt: string }[];
 
   // Detail page
   summary: string;
@@ -31,7 +33,7 @@ export interface Project {
   techStack: { label: string; items: string[] }[];
   role: { title: string; points: string[] };
   decisions?: { title: string; text: string }[];
-  /** Shown in place of links for client work whose code is not public. */
+  /** Shown under the links (or in their place) for client work whose code is not public. */
   linksNote?: string;
 }
 
@@ -205,14 +207,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'stonex-advisor-app',
-    title: 'StoneX Advisor App',
+    slug: 'marble-advisory-app',
+    title: 'Marble Advisory App',
     tag: 'tablet sales app · offline-first',
     description:
       'A tablet app sales executives use to guide clients through choosing marble in the showroom. Offline first, so stone images open instantly, at full quality and in their true proportions.',
     stack: ['React Native CLI', 'Offline cache', 'Firebase', 'Zoho SSO'],
     image: '',
-    imageAlt: 'StoneX Advisor App stone catalog and appointment screens',
+    imageAlt: 'Marble Advisory App stone catalog and appointment screens',
     placeholder: 'Stone catalog + appointment screens',
     summary:
       'A React Native tablet app that sales executives use to guide clients through choosing marble and stone during a showroom appointment.',
@@ -269,11 +271,24 @@ export const projects: Project[] = [
     description:
       'A cross-platform app that coordinates school activities across and within Shiv Nadar School campuses, from attendance and fees to lesson plans and the sickbay.',
     stack: ['React Native CLI', 'RTK Query', 'Firebase', 'LangGraph'],
-    image: '',
-    imageAlt: 'Shiv Nadar School App home screen and modules',
+    image: '/projects/sns/cover.webp',
+    imageAlt: 'OneSNS app screens: home with attendance, transport and meal plan; the SNS community feed; and the meal plan',
     placeholder: 'App screens',
+    links: [
+      { label: 'App Store', href: 'https://apps.apple.com/in/app/onesns/id6783798696' },
+      { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.sns_mobile' },
+    ],
+    gallery: [
+      { src: '/projects/sns/screen-1.webp', alt: 'Home screen with attendance, bus transport, meal plan and quick access' },
+      { src: '/projects/sns/screen-2.webp', alt: 'Calendar of school events and activities' },
+      { src: '/projects/sns/screen-3.webp', alt: 'Meal plan with the day’s menu and nutrition' },
+      { src: '/projects/sns/screen-4.webp', alt: 'Editing a student profile' },
+      { src: '/projects/sns/screen-5.webp', alt: 'Visitor management: choosing a reason for the visit and the student to pick up' },
+      { src: '/projects/sns/screen-6.webp', alt: 'Activity details for an art showcase' },
+      { src: '/projects/sns/screen-7.webp', alt: 'SNS Feed with community posts' },
+    ],
     summary:
-      'A cross-platform iOS and Android app that coordinates school activities across Shiv Nadar School campuses and within each campus.',
+      'A cross-platform iOS and Android app, published as OneSNS, that coordinates school activities across Shiv Nadar School campuses and within each campus.',
     overview: [
       "One app brings the school's day-to-day operations together, from attendance and fees to transport, events and report cards, so they can be coordinated within each campus and across campuses.",
     ],
@@ -330,7 +345,7 @@ export const projects: Project[] = [
         'Improved performance with RTK Query caching and infinite scrolling.',
       ],
     },
-    linksNote: 'Client project. The code is private.',
+    linksNote: 'Client project, so the code is private. The app is live on both stores.',
   },
 ];
 
