@@ -540,12 +540,70 @@ button:focus-visible {
   color: var(--muted);
 }
 
-.card__link {
+.card__links {
   margin-top: auto;
   padding-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.card__link {
   font-weight: 600;
   font-size: 15px;
   color: var(--accent);
+}
+
+/* Pipeline strip used as card art when a project has no screenshot */
+/* Visible overflow lets the 16:9 box grow on narrow phones instead of clipping the steps. */
+.card__media--flow {
+  overflow: visible;
+}
+
+.card__flow {
+  padding: clamp(16px, 4vw, 32px);
+  font-family: var(--font-sans);
+}
+
+.flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 8px;
+  max-width: 460px;
+}
+
+.flow__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow__step:not(:last-child)::after {
+  content: '→';
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.flow__pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid #c9d1f5;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.flow__step:last-child .flow__pill {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
 /* Experience band with overlapping card */

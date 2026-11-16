@@ -10,9 +10,19 @@ export function Projects() {
       <div className="projects-grid">
         {projects.map((p) => (
           <article key={p.title} className="card lift">
-            <div className="card__media">
+            <div className={`card__media${!p.image && p.flow ? ' card__media--flow' : ''}`}>
               {p.image ? (
                 <img className="card__shot" src={p.image} alt={p.imageAlt} loading="lazy" />
+              ) : p.flow ? (
+                <div className="card__shot card__flow">
+                  <ol className="flow" aria-label="Pipeline stages">
+                    {p.flow.map((step) => (
+                      <li key={step} className="flow__step">
+                        <span className="flow__pill">{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               ) : (
                 <div className="card__shot" aria-hidden="true">
                   {p.placeholder}
@@ -24,10 +34,14 @@ export function Projects() {
               <h3 className="card__title">{p.title}</h3>
               <p className="card__desc">{p.description}</p>
               <span className="card__stack">{p.stack.join(' · ')}</span>
-              {p.link && (
-                <a className="card__link" href={p.link} target="_blank" rel="noreferrer">
-                  View project →
-                </a>
+              {p.links && (
+                <div className="card__links">
+                  {p.links.map((l) => (
+                    <a key={l.href} className="card__link" href={l.href} target="_blank" rel="noreferrer">
+                      {l.label} →
+                    </a>
+                  ))}
+                </div>
               )}
             </div>
           </article>

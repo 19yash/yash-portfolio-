@@ -66,7 +66,9 @@ export interface Project {
   image: string;
   imageAlt: string;
   placeholder: string;
-  link?: string;
+  // Shown in the media area instead of the placeholder when there is no image.
+  flow?: string[];
+  links?: { label: string; href: string }[];
 }
 
 export const projects: Project[] = [
@@ -79,6 +81,21 @@ export const projects: Project[] = [
     image: '',
     imageAlt: 'Patient Care Platform dashboard with the RAG assistant open',
     placeholder: 'Dashboard + RAG assistant screenshot',
+  },
+  {
+    title: 'AI Interview Prep Kit',
+    tag: 'AI pipeline · live demo',
+    description:
+      'Takes a job description, a company URL and the days you have, and builds a personal interview plan. A research layer crawls and ranks the company site and treats what it scrapes as untrusted. If a must-have requirement is missing from the questions, a second, targeted pass fills the gap. Coverage, scheduling and validation are deterministic, so the LLM only does generation.',
+    stack: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'TypeScript', 'LLM'],
+    image: '',
+    imageAlt: 'AI Interview Prep Kit generated preparation plan',
+    placeholder: 'Generated prep plan screenshot',
+    flow: ['JD', 'Requirements', 'Company research', 'Questions', 'Flashcards', 'Coverage check', 'Schedule'],
+    links: [
+      { label: 'Live demo', href: 'https://interview-prep-kit-web-nine.vercel.app/' },
+      { label: 'GitHub', href: 'https://github.com/19yash/interview-prep-kit' },
+    ],
   },
   {
     title: 'StoneX Advisor App',
@@ -99,16 +116,6 @@ export const projects: Project[] = [
     image: '',
     imageAlt: 'Shiv Nadar School App lesson planner and moderation screens',
     placeholder: 'Lesson planner + moderation screens',
-  },
-  {
-    title: 'Data pipelines on AWS',
-    tag: 'infrastructure · HIPAA',
-    description:
-      'Streams 500 MB+ JSON straight to S3 without filling memory, and a self-hosted HIPAA-compliant SFTP server for HL7 data that saves $250+ a month.',
-    stack: ['Node.js', 'AWS S3', 'EC2', 'CloudWatch', 'Jenkins'],
-    image: '',
-    imageAlt: 'Architecture diagram of the S3 streaming and SFTP pipeline',
-    placeholder: 'Architecture diagram',
   },
 ];
 
