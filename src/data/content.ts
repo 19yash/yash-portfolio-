@@ -40,8 +40,10 @@ export const skillGroups: { id: SkillGroup | 'all'; label: string }[] = [
 
 export const skills: Skill[] = [
   { name: 'React', icon: 'react', group: 'fe', usedIn: 'Healthcare dashboards for 3 user roles' },
+  { name: 'Next.js', icon: 'nextdotjs', group: 'fe', usedIn: 'AI Interview Prep Kit web app' },
   { name: 'React Native', icon: 'react', group: 'fe', usedIn: 'StoneX advisor app and school app' },
   { name: 'TypeScript', icon: 'typescript', group: 'fe', usedIn: 'Shared component library' },
+  { name: 'Tailwind CSS', icon: 'tailwindcss', group: 'fe', usedIn: 'AI Interview Prep Kit interface' },
   { name: 'Redux Toolkit', icon: 'redux', group: 'fe', usedIn: 'Caching, infinite scroll, cancellation' },
   { name: 'Python', icon: 'python', group: 'be', usedIn: 'Core language for AI services' },
   { name: 'FastAPI', icon: 'fastapi', group: 'be', usedIn: 'Async services with Pydantic validation' },

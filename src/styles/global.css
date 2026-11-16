@@ -443,12 +443,43 @@ button:focus-visible {
   line-height: 1.25;
   font-weight: 600;
   min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .skill__used {
   font-size: 13px;
   line-height: 1.45;
   color: var(--muted);
+}
+
+/* 18 tiles fill three even rows of six on wide screens. */
+@media (min-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .skill {
+    padding: 14px;
+  }
+
+  .skill__top {
+    gap: 10px;
+  }
+
+  .skill__icon {
+    flex-basis: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .skill__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .skill__name {
+    font-size: 15px;
+  }
 }
 
 /* Hover lift shared by skill tiles and project cards */
