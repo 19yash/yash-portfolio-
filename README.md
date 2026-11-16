@@ -60,6 +60,7 @@ src/
     global.css      design tokens, layout, components and motion
 public/
   photo.webp        profile photo
+  Yash_Gupta_Resume.pdf
   projects/         project screenshots
 ```
 
@@ -78,7 +79,7 @@ Images go in `public/` and are referenced from the root, for example `'/projects
 
 Each project supports these optional fields: `image` (16:9 card picture), `flow` (pipeline steps shown when there is no image), `gallery` (screenshots for a swipeable strip), `modules`, `howItWorks`, `decisions`, `links` (Live demo, GitHub, App Store or Google Play) and `linksNote`.
 
-The résumé buttons point to `/Yash_Gupta_Resume.pdf`. Add that file to `public/`, or change `profile.resume`, to make them work.
+The résumé download buttons serve `public/Yash_Gupta_Resume.pdf`. To update the résumé, replace that file and keep the name, or change `profile.resume`.
 
 ## Deploying
 
