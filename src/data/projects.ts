@@ -120,8 +120,9 @@ export const projects: Project[] = [
       { label: 'Integrations', items: ['DrFirst', 'Particle Health', 'HL7 / ADT'] },
     ],
     role: {
-      title: 'Primary full stack engineer',
+      title: 'Project lead and primary full stack engineer',
       points: [
+        'Led the project and worked directly with the client: understood their requirements, suggested technical solutions, and made sure each release was delivered on time.',
         'Built the RAG pipeline with LangChain and Pinecone, using hybrid retrieval, reranking and structured outputs, with evaluation and observability to monitor retrieval quality.',
         'Designed modular FastAPI and Express REST APIs with request validation and role-based access enforced on the server across Admin, Practices and Facilities workflows.',
         'Engineered a streaming pipeline that moves 500 MB+ JSON payloads straight to AWS S3 without holding them in server memory.',
