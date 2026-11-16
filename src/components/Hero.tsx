@@ -10,7 +10,7 @@ export function Hero() {
       <p className="hero__tagline rise rise--2">{profile.tagline}</p>
       <div className="avatar rise rise--3">
         {profile.photo ? (
-          <img src={profile.photo} alt={`Portrait of ${profile.name}`} width={168} height={168} />
+          <img src={profile.photo} alt={`Portrait of ${profile.name}`} width={208} height={208} />
         ) : (
           <span aria-hidden="true">{profile.initials}</span>
         )}

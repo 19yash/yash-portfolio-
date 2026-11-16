@@ -251,8 +251,8 @@ button:focus-visible {
 }
 
 .avatar {
-  width: clamp(120px, 22vw, 168px);
-  height: clamp(120px, 22vw, 168px);
+  width: clamp(152px, 26vw, 208px);
+  height: clamp(152px, 26vw, 208px);
   margin-top: 20px;
   border-radius: 50%;
   border: 6px solid var(--bg);

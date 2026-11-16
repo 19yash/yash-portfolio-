@@ -13,7 +13,7 @@ export const profile = {
   // Drop the PDF into /public and keep this path, or point it at a hosted copy.
   resume: '/Yash_Gupta_Resume.pdf',
   // Set to an image in /public (e.g. '/photo.jpg') to replace the initials avatar.
-  photo: '' as string,
+  photo: '/photo.webp' as string,
 };
 
 export const about = {
