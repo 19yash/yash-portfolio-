@@ -254,8 +254,9 @@ button:focus-visible {
   background: var(--accent);
 }
 
-.caret--done::after {
-  animation: blink 1s steps(1) 5;
+/* Solid while typing or deleting, blinking while paused. */
+.caret--blink::after {
+  animation: blink 1s steps(1) infinite;
 }
 
 .sr-only {
@@ -1397,7 +1398,7 @@ img.card__shot {
   }
 
   .rise,
-  .caret--done::after,
+  .caret--blink::after,
   .skill {
     animation: none;
   }

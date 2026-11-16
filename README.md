@@ -27,7 +27,7 @@ Built with **Vite, React 19, TypeScript and React Router**, styled with plain CS
 
 - Works from 320px phones up to wide desktops. On phones the skill filter becomes a swipeable row, and the screenshot gallery swipes too.
 - Keyboard-friendly: a skip link, visible focus styles and real buttons and links throughout.
-- Motion is kept small (the hero title types itself out, a short fade-in, hover lifts) and switches off when the visitor's device asks for reduced motion. Screen readers always get the full title.
+- Motion is kept small (the hero title types, deletes and retypes itself in a loop, a short fade-in, hover lifts) and switches off when the visitor's device asks for reduced motion. Screen readers always get the full title.
 
 ## Getting started
 
