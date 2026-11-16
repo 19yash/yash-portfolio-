@@ -1,18 +1,19 @@
+import { Link } from 'react-router';
 import { profile } from '../data/content';
 
 export function Header() {
   return (
     <header className="header container">
-      <a href="#top" className="logo" aria-label={`${profile.name}, home`}>
+      <Link to="/" className="logo" aria-label={`${profile.name}, home`}>
         {profile.initials}
-      </a>
+      </Link>
       <nav className="nav" aria-label="Main">
-        <a href="#skills" className="nav__link">
+        <Link to={{ pathname: '/', hash: '#skills' }} className="nav__link">
           Skills
-        </a>
-        <a href="#projects" className="nav__link">
+        </Link>
+        <Link to={{ pathname: '/', hash: '#projects' }} className="nav__link">
           Projects
-        </a>
+        </Link>
         <a href="#contact" className="btn">
           Say hello
         </a>

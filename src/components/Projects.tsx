@@ -1,4 +1,7 @@
-import { profile, projects } from '../data/content';
+import { Link } from 'react-router';
+import { profile } from '../data/content';
+import { projects } from '../data/projects';
+import { ProjectMedia } from './ProjectMedia';
 
 export function Projects() {
   return (
@@ -9,40 +12,29 @@ export function Projects() {
 
       <div className="projects-grid">
         {projects.map((p) => (
-          <article key={p.title} className="card lift">
-            <div className={`card__media${!p.image && p.flow ? ' card__media--flow' : ''}`}>
-              {p.image ? (
-                <img className="card__shot" src={p.image} alt={p.imageAlt} loading="lazy" />
-              ) : p.flow ? (
-                <div className="card__shot card__flow">
-                  <ol className="flow" aria-label="Pipeline stages">
-                    {p.flow.map((step) => (
-                      <li key={step} className="flow__step">
-                        <span className="flow__pill">{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              ) : (
-                <div className="card__shot" aria-hidden="true">
-                  {p.placeholder}
-                </div>
-              )}
-            </div>
+          <article key={p.slug} className="card lift">
+            <Link to={`/projects/${p.slug}`} tabIndex={-1} aria-hidden="true">
+              <ProjectMedia project={p} />
+            </Link>
             <div className="card__body">
               <span className="card__tag">{p.tag}</span>
-              <h3 className="card__title">{p.title}</h3>
+              <h3 className="card__title">
+                <Link to={`/projects/${p.slug}`} className="card__title-link">
+                  {p.title}
+                </Link>
+              </h3>
               <p className="card__desc">{p.description}</p>
               <span className="card__stack">{p.stack.join(' · ')}</span>
-              {p.links && (
-                <div className="card__links">
-                  {p.links.map((l) => (
-                    <a key={l.href} className="card__link" href={l.href} target="_blank" rel="noreferrer">
-                      {l.label} →
-                    </a>
-                  ))}
-                </div>
-              )}
+              <div className="card__links">
+                <Link to={`/projects/${p.slug}`} className="card__link">
+                  View details →
+                </Link>
+                {p.links?.map((l) => (
+                  <a key={l.href} className="card__link card__link--ext" href={l.href} target="_blank" rel="noreferrer">
+                    {l.label} ↗
+                  </a>
+                ))}
+              </div>
             </div>
           </article>
         ))}

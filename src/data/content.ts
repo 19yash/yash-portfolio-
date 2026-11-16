@@ -59,68 +59,6 @@ export const skills: Skill[] = [
   { name: 'Docker', icon: 'docker', group: 'ops', usedIn: 'Containerised services' },
 ];
 
-export interface Project {
-  title: string;
-  tag: string;
-  description: string;
-  stack: string[];
-  // Path to a screenshot in /public; leave empty to show the placeholder.
-  image: string;
-  imageAlt: string;
-  placeholder: string;
-  // Shown in the media area instead of the placeholder when there is no image.
-  flow?: string[];
-  links?: { label: string; href: string }[];
-}
-
-export const projects: Project[] = [
-  {
-    title: 'Patient Care Platform',
-    tag: 'healthcare SaaS · 10,000+ patients',
-    description:
-      "React dashboards for three user roles, FastAPI and Node.js services, and a RAG assistant that answers questions about a patient's history. A central MCP server gives every AI service audited access to the data.",
-    stack: ['React', 'FastAPI', 'Node.js', 'LangGraph', 'Pinecone', 'MongoDB', 'AWS'],
-    image: '',
-    imageAlt: 'Patient Care Platform dashboard with the RAG assistant open',
-    placeholder: 'Dashboard + RAG assistant screenshot',
-  },
-  {
-    title: 'AI Interview Prep Kit',
-    tag: 'AI pipeline · live demo',
-    description:
-      'Takes a job description, a company URL and the days you have, and builds a personal interview plan. A research layer crawls and ranks the company site and treats what it scrapes as untrusted. If a must-have requirement is missing from the questions, a second, targeted pass fills the gap. Coverage, scheduling and validation are deterministic, so the LLM only does generation.',
-    stack: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'TypeScript', 'LLM'],
-    image: '',
-    imageAlt: 'AI Interview Prep Kit generated preparation plan',
-    placeholder: 'Generated prep plan screenshot',
-    flow: ['JD', 'Requirements', 'Company research', 'Questions', 'Flashcards', 'Coverage check', 'Schedule'],
-    links: [
-      { label: 'Live demo', href: 'https://interview-prep-kit-web-nine.vercel.app/' },
-      { label: 'GitHub', href: 'https://github.com/19yash/interview-prep-kit' },
-    ],
-  },
-  {
-    title: 'StoneX Advisor App',
-    tag: 'sales app · offline-first',
-    description:
-      'Sales advisors use it to guide each client through an appointment, from first meeting to final selection. It works offline first, so the stone catalog opens instantly with no lag, and stone images keep their aspect ratio and full quality so every detail stays clear.',
-    stack: ['React Native', 'Offline sync', 'Image caching'],
-    image: '',
-    imageAlt: 'StoneX Advisor App stone catalog and appointment screens',
-    placeholder: 'Stone catalog + appointment screens',
-  },
-  {
-    title: 'Shiv Nadar School App',
-    tag: 'edtech · iOS + Android',
-    description:
-      "An AI lesson planner that follows the school's curriculum and an AI moderator that approves, rejects or escalates comments. I led the release and shipped 20+ features in 3 months.",
-    stack: ['React Native', 'FastAPI', 'Firebase', 'LLM'],
-    image: '',
-    imageAlt: 'Shiv Nadar School App lesson planner and moderation screens',
-    placeholder: 'Lesson planner + moderation screens',
-  },
-];
-
 export const experience = {
   company: 'Daffodil Software',
   dates: 'Jan 2024 – now',
