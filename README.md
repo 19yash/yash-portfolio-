@@ -25,8 +25,8 @@ All copy lives in [`src/data/content.ts`](src/data/content.ts): profile, intro, 
 |---|---|
 | Your photo | `profile.photo`, e.g. `'/photo.jpg'` (square, at least 400×400) |
 | Résumé PDF | `public/Yash_Gupta_Resume.pdf`, or change `profile.resume` |
-| Project screenshots | `image` on each project (16:9 works best) |
-| Project links | `link` on each project; the "View project →" link only shows when it is set |
+| Project screenshots | `image` on each project (16:9 works best). Without one, a project with `flow` shows its pipeline stages instead |
+| Project links | `links` on each project, e.g. `[{ label: 'Live demo', href: 'https://…' }]`; links only show when set |
 | Company logo | `experience.logo` |
 
 Skill icons come from [Simple Icons](https://simpleicons.org) (CC0) and live in `src/data/icons.ts`. Pinecone has no Simple Icons glyph, so it uses a placeholder shape.
