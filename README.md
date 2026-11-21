@@ -21,7 +21,7 @@ Built with **Vite, React 19, TypeScript and React Router**, styled with plain CS
 | Patient Care Platform | Transitional Care Management (TCM) platform for US healthcare practices, with a RAG assistant over patient history | Private client project |
 | AI Interview Prep Kit | Turns a job description, company URL and prep days into a personalised interview plan through a multi-step AI pipeline | [Live demo](https://interview-prep-kit-web-nine.vercel.app/) · [GitHub](https://github.com/19yash/interview-prep-kit) |
 | Marble Advisory App | Offline-first React Native tablet app that sales executives use to guide clients through choosing stone | Private client project |
-| SNS Mobile App (OneSNS) | Cross-platform app that coordinates school activities across campuses: attendance, fees, transport, lesson plans and more | [App Store](https://apps.apple.com/in/app/onesns/id6783798696) · [Google Play](https://play.google.com/store/apps/details?id=com.sns_mobile) |
+| SNS (OneSNS) | Cross-platform app that coordinates school activities across campuses: attendance, fees, transport, lesson plans and more | [App Store](https://apps.apple.com/in/app/onesns/id6783798696) · [Google Play](https://play.google.com/store/apps/details?id=com.sns_mobile) |
 
 **Responsive and accessible**
 

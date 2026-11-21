@@ -266,8 +266,8 @@ export const projects: Project[] = [
     linksNote: 'Client project. The code and the app are private.',
   },
   {
-    slug: 'sns-mobile-app',
-    title: 'SNS Mobile App',
+    slug: 'sns',
+    title: 'SNS',
     tag: 'edtech · iOS + Android',
     description:
       'A cross-platform app that coordinates school activities across and within SNS campuses, from attendance and fees to lesson plans and the sickbay.',
