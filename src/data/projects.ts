@@ -266,11 +266,11 @@ export const projects: Project[] = [
     linksNote: 'Client project. The code and the app are private.',
   },
   {
-    slug: 'shiv-nadar-school-app',
-    title: 'Shiv Nadar School App',
+    slug: 'sns-mobile-app',
+    title: 'SNS Mobile App',
     tag: 'edtech · iOS + Android',
     description:
-      'A cross-platform app that coordinates school activities across and within Shiv Nadar School campuses, from attendance and fees to lesson plans and the sickbay.',
+      'A cross-platform app that coordinates school activities across and within SNS campuses, from attendance and fees to lesson plans and the sickbay.',
     stack: ['React Native CLI', 'RTK Query', 'Firebase', 'LangGraph'],
     image: '/projects/sns/cover.webp',
     imageAlt: 'OneSNS app screens: home with attendance, transport and meal plan; the SNS community feed; and the meal plan',
@@ -289,7 +289,7 @@ export const projects: Project[] = [
       { src: '/projects/sns/screen-7.webp', alt: 'SNS Feed with community posts' },
     ],
     summary:
-      'A cross-platform iOS and Android app, published as OneSNS, that coordinates school activities across Shiv Nadar School campuses and within each campus.',
+      'A cross-platform iOS and Android app, published as OneSNS, that coordinates school activities across SNS campuses and within each campus.',
     overview: [
       "One app brings the school's day-to-day operations together, from attendance and fees to transport, events and report cards, so they can be coordinated within each campus and across campuses.",
     ],
